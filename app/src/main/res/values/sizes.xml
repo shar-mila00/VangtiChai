@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- All layout dimensions live here: no hardcoded sizes in layout XML. -->
+<resources>
+    <dimen name="text_amount">30sp</dimen>
+    <dimen name="text_note">18sp</dimen>
+    <dimen name="key_text">22sp</dimen>
+    <dimen name="key_height">50dp</dimen>
+    <dimen name="gap_small">10dp</dimen>
+    <dimen name="gap_medium">20dp</dimen>
+    <dimen name="gap_large">32dp</dimen>
+    <dimen name="screen_padding">12dp</dimen>
+    <dimen name="keypad_start">175dp</dimen>
+    <dimen name="notes_mid">170dp</dimen>
+    <dimen name="keypad_start_land">390dp</dimen>
+</resources>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Phone portrait layout (tested on Pixel XL, 411x731dp).
+    Top: entered amount next to "Taka:" label. Left: change table.
+    Right: keypad with rows 1-2-3 / 4-5-6 / 7-8-9 / 0-CLEAR.
+    All sizes come from values/sizes.xml - nothing hardcoded here.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_bg"
+    android:padding="@dimen/screen_padding">
+
+    <TextView
+        android:id="@+id/tvAmount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_medium"
+        android:gravity="center"
+        android:text="@string/taka_label"
+        android:textColor="@color/text_primary"
+        android:textSize="@dimen/text_amount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineKeypad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/keypad_start" />
+
+    <!-- Change table (notes that make up the entered amount) -->
+    <TextView
+        android:id="@+id/tvNote500"
+        style="@style/NoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_large"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvAmount" />
+
+    <TextView
+        android:id="@+id/tvNote100"
+        style="@style/NoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNote500" />
+
+    <TextView
+        android:id="@+id/tvNote50"
+        style="@style/NoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNote100" />
+
+    <TextView
+        android:id="@+id/tvNote20"
+        style="@style/NoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNote50" />
+
+    <TextView
+        android:id="@+id/tvNote10"
+        style="@style/NoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNote20" />
+
+    <TextView
+        android:id="@+id/tvNote5"
+        style="@style/NoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNote10" />
+
+    <TextView
+        android:id="@+id/tvNote2"
+        style="@style/NoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNote5" />
+
+    <TextView
+        android:id="@+id/tvNote1"
+        style="@style/NoteText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/gap_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvNote2" />
+
+    <!-- Keypad: rows chained vertically (packed), keys chained horizontally -->
+    <Button
+        android:id="@+id/key1"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:layout_marginTop="@dimen/gap_large"
+        android:text="@string/digit_1"
+        app:layout_constraintBottom_toTopOf="@id/key4"
+        app:layout_constraintEnd_toStartOf="@id/key2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toEndOf="@id/guidelineKeypad"
+        app:layout_constraintTop_toBottomOf="@id/tvAmount"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <Button
+        android:id="@+id/key2"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:text="@string/digit_2"
+        app:layout_constraintEnd_toStartOf="@id/key3"
+        app:layout_constraintStart_toEndOf="@id/key1"
+        app:layout_constraintTop_toTopOf="@id/key1" />
+
+    <Button
+        android:id="@+id/key3"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:text="@string/digit_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/key2"
+        app:layout_constraintTop_toTopOf="@id/key1" />
+
+    <Button
+        android:id="@+id/key4"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:layout_marginTop="@dimen/gap_small"
+        android:text="@string/digit_4"
+        app:layout_constraintBottom_toTopOf="@id/key7"
+        app:layout_constraintEnd_toStartOf="@id/key5"
+        app:layout_constraintStart_toEndOf="@id/guidelineKeypad"
+        app:layout_constraintTop_toBottomOf="@id/key1" />
+
+    <Button
+        android:id="@+id/key5"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:text="@string/digit_5"
+        app:layout_constraintEnd_toStartOf="@id/key6"
+        app:layout_constraintStart_toEndOf="@id/key4"
+        app:layout_constraintTop_toTopOf="@id/key4" />
+
+    <Button
+        android:id="@+id/key6"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:text="@string/digit_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/key5"
+        app:layout_constraintTop_toTopOf="@id/key4" />
+
+    <Button
+        android:id="@+id/key7"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:layout_marginTop="@dimen/gap_small"
+        android:text="@string/digit_7"
+        app:layout_constraintBottom_toTopOf="@id/key0"
+        app:layout_constraintEnd_toStartOf="@id/key8"
+        app:layout_constraintStart_toEndOf="@id/guidelineKeypad"
+        app:layout_constraintTop_toBottomOf="@id/key4" />
+
+    <Button
+        android:id="@+id/key8"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:text="@string/digit_8"
+        app:layout_constraintEnd_toStartOf="@id/key9"
+        app:layout_constraintStart_toEndOf="@id/key7"
+        app:layout_constraintTop_toTopOf="@id/key7" />
+
+    <Button
+        android:id="@+id/key9"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:text="@string/digit_9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/key8"
+        app:layout_constraintTop_toTopOf="@id/key7" />
+
+    <Button
+        android:id="@+id/key0"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:layout_marginTop="@dimen/gap_small"
+        android:text="@string/digit_0"
+        app:layout_constraintEnd_toStartOf="@id/keyClear"
+        app:layout_constraintStart_toEndOf="@id/guidelineKeypad"
+        app:layout_constraintTop_toBottomOf="@id/key7" />
+
+    <Button
+        android:id="@+id/keyClear"
+        style="@style/KeyButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/key_height"
+        android:text="@string/clear"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/key0"
+        app:layout_constraintTop_toTopOf="@id/key0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.VangtiChai" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/screen_bg</item>
+    </style>
+
+    <!-- Keypad key buttons -->
+    <style name="KeyButton" parent="Widget.AppCompat.Button">
+        <item name="android:background">@color/key_bg</item>
+        <item name="android:textColor">@color/key_text</item>
+        <item name="android:textSize">@dimen/key_text</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <!-- Change-table note rows -->
+    <style name="NoteText">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">@dimen/text_note</item>
+    </style>
+</resources>
