@@ -59,7 +59,7 @@ I declare that:
 - I take full responsibility for my submission
 
 Signature: ___Sharmila Dev Nath____________________
-Date: ___________________________
+Date: ____25-10-2026_______________________
 
 ============================================================
 Save as: docs/AI_Declaration.txt
