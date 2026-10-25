@@ -7,6 +7,7 @@
 -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/screen_bg"
@@ -37,25 +38,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/keypad_start_land" />
+        app:layout_constraintGuide_begin="332dp" />
 
     <!-- Left change-table column: 500 / 100 / 50 / 20 -->
 
     <TextView
         android:id="@+id/tvNote1000"
         style="@style/NoteText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/gap_large"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="52dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvAmount" />
+
+    <!-- Right change-table column: 10 / 5 / 2 / 1 -->
 
     <TextView
         android:id="@+id/tvNote500"
         style="@style/NoteText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/gap_large"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNote1000" />
 
@@ -64,7 +69,8 @@
         style="@style/NoteText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/gap_small"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNote500" />
 
@@ -73,7 +79,8 @@
         style="@style/NoteText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/gap_small"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNote100" />
 
@@ -82,11 +89,11 @@
         style="@style/NoteText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/gap_small"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNote50" />
 
-    <!-- Right change-table column: 10 / 5 / 2 / 1 -->
     <TextView
         android:id="@+id/tvNote10"
         style="@style/NoteText"
@@ -226,6 +233,7 @@
         style="@style/KeyButton"
         android:layout_width="0dp"
         android:layout_height="@dimen/key_height"
+        android:layout_marginTop="4dp"
         android:text="@string/digit_0"
         app:layout_constraintEnd_toStartOf="@id/keyClear"
         app:layout_constraintStart_toEndOf="@id/key9"
@@ -236,6 +244,7 @@
         style="@style/KeyButton"
         android:layout_width="0dp"
         android:layout_height="@dimen/key_height"
+        android:layout_marginTop="4dp"
         android:text="@string/clear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/key0"
