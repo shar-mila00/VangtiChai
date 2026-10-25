@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     companion object {
         // Denominations in descending order, as required by the assignment.
-        private val NOTES = intArrayOf(500, 100, 50, 20, 10, 5, 2, 1)
+        private val NOTES = intArrayOf(1000, 500, 100, 50, 20, 10, 5, 2, 1)
         private const val KEY_AMOUNT = "amount"
         private const val MAX_DIGITS = 9
     }
@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         tvAmount = findViewById(R.id.tvAmount)
+        noteViews[1000] = findViewById(R.id.tvNote1000)
         noteViews[500] = findViewById(R.id.tvNote500)
         noteViews[100] = findViewById(R.id.tvNote100)
         noteViews[50] = findViewById(R.id.tvNote50)
